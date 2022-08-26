@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginScreen">
+
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.udacity.shoestore.WelcomeScreen"
+        android:label="welcome"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreen_to_instructionScreen"
+            app:destination="@id/instructionScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.udacity.shoestore.LoginScreen"
+        android:label="login"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionScreen"
+        android:name="com.udacity.shoestore.InstructionScreen"
+        android:label="instruction Of App"
+        tools:layout="@layout/fragment_instruction_screen" >
+        <action
+            android:id="@+id/action_instructionScreen_to_shoesList"
+            app:destination="@id/shoesList" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoesList"
+        android:name="com.udacity.shoestore.ShoesList"
+        android:label="shoes list u enterd"
+        tools:layout="@layout/fragment_shoes_list" >
+        <action
+            android:id="@+id/action_shoesList_to_newShoeList"
+            app:destination="@id/newShoeList" />
+        <action
+            android:id="@+id/action_shoesList_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/newShoeList"
+        android:name="com.udacity.shoestore.NewShoeList"
+        android:label="new shoe Details"
+        tools:layout="@layout/fragment_new_shoe_list" >
+        <action
+            android:id="@+id/action_newShoeList_to_shoesList"
+            app:destination="@id/shoesList" />
+    </fragment>
+</navigation>
